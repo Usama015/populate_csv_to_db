@@ -1,34 +1,30 @@
 package com.whoisfreaks.dbupdate.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity(name = "domain_info")
+@Document(collation = "domain_info")
 public class DomainInfo {
 
     public DomainInfo() {
     }
 
-    public DomainInfo(Long id, String domainName, String queryTime, String createDate,
-                      String updateDate, String expiryDate, String domainRegistrarId,
-                      String domainRegistrarName, String domainRegistrarWhois, String domainRegistrarUrl,
-                      String registrantName, String registrantCompany, String registrantAddress,
-                      String registrantCity, String registrantState, String registrantZip, String registrantCountryCode,
-                      String registrantCountry, String registrantEmail, String registrantPhone, String registrantFax,
-                      String administrativeName, String administrativeCompany, String administrativeAddress,
-                      String administrativeCity, String administrativeState, String administrativeZip,
-                      String administrativeCountryCode, String administrativeCountry, String administrativeEmail,
-                      String administrativePhone, String administrativeFax, String technicalName,
-                      String technicalCompany, String technicalAddress, String technicalCity, String technicalState,
-                      String technicalZip, String technicalCountryCode, String technicalCountry, String technicalEmail,
-                      String technicalPhone, String technicalFax, String billingName, String billingCompany,
-                      String billingAddress, String billingCity, String billingState, String billingZip,
-                      String billingCountryCode, String billingCountry, String billingEmail, String billingPhone,
-                      String billingFax, String nameServer1, String nameServer2, String nameServer3, String nameServer4,
-                      String domainStatus1, String domainStatus2, String domainStatus3, String domainStatus4) {
-        this.id = id;
+    public DomainInfo(String domainName, String queryTime, String createDate, String updateDate, String expiryDate,
+                      String domainRegistrarId, String domainRegistrarName, String domainRegistrarWhois,
+                      String domainRegistrarUrl, String registrantName, String registrantCompany,
+                      String registrantAddress, String registrantCity, String registrantState, String registrantZip,
+                      String registrantCountryCode, String registrantCountry, String registrantEmail,
+                      String registrantPhone, String registrantFax, String administrativeName,
+                      String administrativeCompany, String administrativeAddress, String administrativeCity,
+                      String administrativeState, String administrativeZip, String administrativeCountryCode,
+                      String administrativeCountry, String administrativeEmail, String administrativePhone,
+                      String administrativeFax, String technicalName, String technicalCompany, String technicalAddress,
+                      String technicalCity, String technicalState, String technicalZip, String technicalCountryCode,
+                      String technicalCountry, String technicalEmail, String technicalPhone, String technicalFax,
+                      String billingName, String billingCompany, String billingAddress, String billingCity,
+                      String billingState, String billingZip, String billingCountryCode, String billingCountry,
+                      String billingEmail, String billingPhone, String billingFax, String nameServer1, String nameServer2,
+                      String nameServer3, String nameServer4, String domainStatus1, String domainStatus2,
+                      String domainStatus3, String domainStatus4) {
         this.domainName = domainName;
         this.queryTime = queryTime;
         this.createDate = createDate;
@@ -92,10 +88,6 @@ public class DomainInfo {
         this.domainStatus4 = domainStatus4;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     private String domainName;
     private String queryTime;
     private String createDate;
@@ -157,14 +149,6 @@ public class DomainInfo {
     private String domainStatus2;
     private String domainStatus3;
     private String domainStatus4;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getDomainName() {
         return domainName;
@@ -653,4 +637,5 @@ public class DomainInfo {
     public void setDomainStatus4(String domainStatus4) {
         this.domainStatus4 = domainStatus4;
     }
+
 }

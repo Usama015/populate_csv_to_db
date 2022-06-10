@@ -7,7 +7,7 @@ import org.springframework.batch.item.file.transform.FieldSet;
 public class DomainInfoMapper implements FieldSetMapper<DomainInfo> {
     @Override
     public DomainInfo mapFieldSet(FieldSet fieldSet) {
-        return new DomainInfo(fieldSet.readLong("num"),fieldSet.readString("domain_name"), fieldSet.readString("query_time"),
+        return new DomainInfo(fieldSet.readString("domain_name"), fieldSet.readString("query_time"),
                 fieldSet.readString("create_date"), fieldSet.readString("update_date"), fieldSet.readString("expiry_date"),
                 fieldSet.readString("domain_registrar_id"), fieldSet.readString("domain_registrar_name"),
                 fieldSet.readString("domain_registrar_whois"), fieldSet.readString("domain_registrar_url"),
